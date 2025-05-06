@@ -1,9 +1,11 @@
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, Depends
 from pydantic import BaseModel
 from app.database import SessionLocal, engine
+from sqlalchemy.orm import Session
 from app import models, sentiment
 from app.schemas import CSAcaoCreate, CSSentimentoCreate
 from app import crud
+from app import database
 
 # Criando a aplicação FastAPI
 app = FastAPI()
