@@ -1,6 +1,6 @@
 from sqlalchemy.orm import Session
-from app import models, schemas
-from app.sentiment import SentimentAnalyzer
+import models, schemas
+from sentiment import SentimentAnalyzer
 from fastapi import HTTPException
 
 # Função para criar um sentimento associado a uma ação

@@ -1,11 +1,11 @@
 import torch
 from transformers import pipeline
-from app.models import CSSentimento, CSAcoes
-from app.database import SessionLocal
-from app.schemas import CSSentimentoCreate
+from models import CSSentimento, CSAcoes
+from database import SessionLocal
+from schemas import CSSentimentoCreate
 
 # Carregar o modelo de análise de sentimentos (usando o Hugging Face Transformers para simplificação)
-modelo_sentimento = pipeline("text-classification", model="bert-base-uncased")
+modelo_sentimento = pipeline("text-classification", model="model/sentiment_model")
 
 # Mapeamento dos rótulos de sentimentos para suas respectivas categorias
 sentimentos_mapeados = {
