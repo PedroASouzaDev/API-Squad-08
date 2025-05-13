@@ -50,6 +50,8 @@ class CSAcoes(Base):
     event = relationship("CSEvent", back_populates="acoes")
     agent = relationship("CSAgent", back_populates="acoes")
     user = relationship("CSUser", back_populates="acoes")
+    sentimento = relationship("CSSentimento", back_populates="acao")
+
 
 class CSSentimento(Base):
     __tablename__ = "cs_sentimentos"

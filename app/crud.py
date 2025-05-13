@@ -1,12 +1,12 @@
 from sqlalchemy.orm import Session
 import models, schemas
-from sentiment import SentimentAnalyzer
+import sentiment
 from fastapi import HTTPException
 
 # Função para criar um sentimento associado a uma ação
 def criar_sentimento(db: Session, acao_id: int, descricao: str):
     # Analisando o sentimento da descrição da ação
-    sentimento_analisado = SentimentAnalyzer.analisar_sentimento(descricao)
+    sentimento_analisado = sentiment.analisar_sentimento(descricao)
     
     # Criando um novo sentimento para a ação
     sentimento = models.CSSentimentos(acao_id=acao_id, sentimento=sentimento_analisado)

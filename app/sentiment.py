@@ -30,7 +30,7 @@ class SentimentModel(nn.Module):
 
 # Carregar modelo treinado
 model = SentimentModel(vocab_size=len(tokenizer)).to(device)
-model.load_state_dict(torch.load("model/sentiment_model.pth", map_location=device))
+model.load_state_dict(torch.load("../model/sentiment_model.pth", map_location=device))
 model.eval()
 
 def analisar_sentimento(descricao: str):
