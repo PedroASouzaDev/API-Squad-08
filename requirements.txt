@@ -4,3 +4,4 @@ python-dotenv==1.1.0
 SQLAlchemy==2.0.41
 torch==2.7.0
 transformers==4.51.3
+psycopg2
